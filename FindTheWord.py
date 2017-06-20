@@ -20,7 +20,7 @@ which need to be serach in files
 keywordList=["pcs"]
 sheet=""
 wb=""
-row_count=2
+row_count=1
 excel_sheet_path=os.path.expanduser("~/Desktop/KeywordSearchlog.xlsx")
 
 def add_keyword(x):
