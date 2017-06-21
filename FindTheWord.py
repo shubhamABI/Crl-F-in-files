@@ -20,7 +20,7 @@ which need to be serach in files
 keywordList=["pcs"]
 sheet=""
 wb=""
-row_count=1
+row_count=2
 excel_sheet_path=os.path.expanduser("~/Desktop/KeywordSearchlog.xlsx")
 
 def add_keyword(x):
@@ -28,7 +28,6 @@ def add_keyword(x):
 
     global keywordList
     keywordList.extend(list1)
-    print(keywordList)
     
 #add_keyword(input("Please Enter the word"))
 #print(keywordList)
@@ -60,9 +59,8 @@ def search_in_file(path):
         for line in fl:
             for kw in keywordList:
                 if kw.lower() in line.lower():
-                    #print(path+"----"+kw+"---"+str(count)+"---"+line)
                     insert_data_into_excel_Sheet(path,kw,count,line)
-                    count+=1
+            count+=1        
                     
     
           
@@ -94,7 +92,7 @@ def createExcelSheetforlog(path):
     """
 def insert_data_into_excel_Sheet(filepath,keyword,lineNo,line):
     global row_count
-    sheet1['A'+str(row_count)]=row_count
+    sheet1['A'+str(row_count)]=row_count-1
     sheet1['B'+str(row_count)]=filepath
     sheet1['C'+str(row_count)]=keyword
     sheet1['D'+str(row_count)]=lineNo
