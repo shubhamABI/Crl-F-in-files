@@ -50,7 +50,8 @@ def readfile(indir):
     for root, dirs, filenames in os.walk(indir):
        for f in filenames:
            file_path=root+"\\"+f
-           search_in_file(file_path)
+           if not f.startswith('.') and os.path.isfile(file_path):
+               search_in_file(file_path)
     print("Searching Completed!!!")
            
 def search_in_file(path):
