@@ -1,0 +1,2 @@
+cx_freeze install command
+python -m pip install cx_Freeze --upgrade
